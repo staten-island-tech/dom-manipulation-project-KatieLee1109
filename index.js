@@ -1,11 +1,23 @@
 const DOMSelectors = {
+    name: document.getElementById("name"),
+    input: document.getElementById("input"),
+    button: document.getElementById("button"),
     form: document.getElementById("form"),
-    thing: document.getElementById("thing"),
-    url: document.getElementById("url"),
     display: document.getElementById("display"),
 };
-console.log("form");
-document.getElementById("form");
+console.log(DOMSelectors.name);
+console.log(DOMSelectors.input);
+console.log(DOMSelectors.button);
+console.log(DOMSelectors.form);
+
+
+
+
+DOMSelectors.form.addEventListener("submit", function () {
+
+});
+
+
 
 
 
