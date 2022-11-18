@@ -1,21 +1,20 @@
-const DOMSelectors = {
-    name: document.getElementById("name"),
-    input: document.getElementById("input"),
-    button: document.getElementById("button"),
-    form: document.getElementById("form"),
-    display: document.getElementById("display"),
+  const DOMSelectors = {
+      name: document.getElementById('title'),
+      name2: document.getElementById('title2'),
+      text: document.getElementById('email'),
+     button: document.getElementById('btn'),
 };
-console.log(DOMSelectors.name);
-console.log(DOMSelectors.input);
-console.log(DOMSelectors.button);
-console.log(DOMSelectors.form);
+function display(){
+    alert("clicked");
+}
+console.log("btn");
+addEventListener('click', display)
 
 
 
 
-DOMSelectors.form.addEventListener("submit", function () {
 
-});
+
 
 
 
