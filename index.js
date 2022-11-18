@@ -1,15 +1,17 @@
-  const DOMSelectors = {
-      name: document.getElementById('title'),
-      name2: document.getElementById('title2'),
-      text: document.getElementById('email'),
-     button: document.getElementById('btn'),
+const DOMSelectors = {
+    title: document.getElementById("name"),
+    title2: document.getElementById("name2"),
+    text: document.getElementById("email"),
+    button: document.getElementById("btn"),
+    form: document.getElementById("form"),
 };
-function display(){
-    alert("clicked");
-}
-console.log("btn");
-addEventListener('click', display)
+console.log(DOMSelectors);
 
+DOMSelectors.form.addEventListener("submit", function (submit) {
+    submit.defaultPrevented
+
+}
+)
 
 
 
