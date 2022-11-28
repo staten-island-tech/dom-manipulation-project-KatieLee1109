@@ -4,6 +4,7 @@ const DOMSelectors = {
     email: document.getElementById("email"),
     button: document.getElementById("btn"),
     form: document.getElementById("form"),
+    clear: document.querySelectorAll(".remove"),
 };
 console.log(DOMSelectors);
 
@@ -23,4 +24,18 @@ DOMSelectors.form.addEventListener("submit", function (submit) {
             `<div class="info">
         <h2>your name is ${title} ${title2} and your email is ${text}.</h2>
         <button class="clear">Clear</button>
-        </div>)`;
+        </div>`);
+        DOMSelectors.title.value = "";
+        DOMSelectors.title2.value = "";
+        DOMSelectors.text.value = "";
+        document.getElementById("form").reset();
+    }
+
+    function clear() {
+        let clear = document.querySelectorAll(".remove");
+        clear.forEach(el) => {
+            el.addEventListener("click", function (el) {
+                this.parentElement.remove();
+            });
+        };
+    }
