@@ -9,33 +9,31 @@ const DOMSelectors = {
 console.log(DOMSelectors);
 
 DOMSelectors.form.addEventListener("submit", function (submit) {
-    submit.defaultPrevented();
+    submit.preventDefault();
 
     let title = DOMSelectors.name.value;
     let title2 = DOMSelectors.name2.value;
     let text = DOMSelectors.email.value;
-    let button = DOMSelectors.btn.value;
     console.log(DOMSelectors);
     creation();
     clear();
     function creation() {
         DOMSelectors.button.insertAdjacentHTML(
             `afterend`,
-            `<div class="info">
+            `<div class="click">
         <h2>your name is ${title} ${title2} and your email is ${text}.</h2>
-        <button class="clear">Clear</button>
         </div>`);
         DOMSelectors.title.value = "";
         DOMSelectors.title2.value = "";
         DOMSelectors.text.value = "";
         document.getElementById("form").reset();
     }
-
     function clear() {
-        let clear = document.querySelectorAll(".remove");
-        clear.forEach(el) => {
-            el.addEventListener("click", function (el) {
-                this.parentElement.remove();
+        let clear = document.querySelectorAll(".clear");
+        clear.forEach((button) => {
+            button.addEventListener("click", function () {
+                this.click.remove();
             });
-        };
+        });
     }
+})
