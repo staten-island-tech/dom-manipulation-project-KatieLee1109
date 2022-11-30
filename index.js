@@ -5,6 +5,7 @@ const DOMSelectors = {
     button: document.getElementById("btn"),
     form: document.getElementById("form"),
     clear: document.querySelectorAll(".remove"),
+    scrub: document.querySelector(".scrub")
 };
 console.log(DOMSelectors);
 
@@ -18,21 +19,23 @@ DOMSelectors.form.addEventListener("submit", function (submit) {
     creation();
     clear();
     function creation() {
-        DOMSelectors.button.insertAdjacentHTML(
-            `afterend`,
+        DOMSelectors.scrub.insertAdjacentHTML(
+            `beforeend`,
             `<div class="click">
         <h2>your name is ${title} ${title2} and your email is ${text}.</h2>
-        </div>`);
-        DOMSelectors.title.value = "";
-        DOMSelectors.title2.value = "";
-        DOMSelectors.text.value = "";
+        <button class="clear">Clear</button>
+        </div>
+      `);
+        DOMSelectors.name.value = "";
+        DOMSelectors.name2.value = "";
+        DOMSelectors.email.value = "";
         document.getElementById("form").reset();
     }
     function clear() {
         let clear = document.querySelectorAll(".clear");
-        clear.forEach((button) => {
-            button.addEventListener("click", function () {
-                this.click.remove();
+        clear.forEach((clear) => {
+            clear.addEventListener("click", (e) => {
+                e.target.parentElement.remove();
             });
         });
     }
